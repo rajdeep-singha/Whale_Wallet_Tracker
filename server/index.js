@@ -14,7 +14,7 @@ app.use(express.json());
 const API_KEY = process.env.COVALENT_API_KEY;
 const CHAIN = "eth-mainnet";
 
-// Whale wallet addresses to monitor
+// Whale wallet addresses 
 const WHALE_WALLETS = [
   { address: "0x28C6c06298d514Db089934071355E5743bf21d60", name: "Binance Hot Wallet" },
   { address: "0x21a31Ee1afC51d94C2eFcCAa2092aD1028285549", name: "Binance Cold Wallet" },
