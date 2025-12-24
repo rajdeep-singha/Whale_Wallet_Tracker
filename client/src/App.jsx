@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 
 const API_BASE = import.meta.env.PROD 
-  ? 'https://whale-wallet-tracker.onrender.com/'  : ''  
+  ? 'https://whale-wallet-tracker.onrender.com'  // No trailing slash!
+  : ''  
 
 const WHALE_WALLETS = [
   { address: "0x28C6c06298d514Db089934071355E5743bf21d60", name: "Binance Hot Wallet" },
