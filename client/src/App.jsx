@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 
+const API_BASE = import.meta.env.PROD 
+  ? 'https://whale-wallet-tracker.onrender.com/'  : ''  
+
 const WHALE_WALLETS = [
   { address: "0x28C6c06298d514Db089934071355E5743bf21d60", name: "Binance Hot Wallet" },
   { address: "0x21a31Ee1afC51d94C2eFcCAa2092aD1028285549", name: "Binance Cold Wallet" },
@@ -36,9 +39,9 @@ function App() {
 
     try {
       const [balRes, txRes, analysisRes] = await Promise.all([
-        fetch(`/api/balances/${selectedWallet.address}`),
-        fetch(`/api/transactions/${selectedWallet.address}`),
-        fetch(`/api/analyze/${selectedWallet.address}`)
+        fetch(`${API_BASE}/api/balances/${selectedWallet.address}`),
+        fetch(`${API_BASE}/api/transactions/${selectedWallet.address}`),
+        fetch(`${API_BASE}/api/analyze/${selectedWallet.address}`)
       ])
 
       if (!balRes.ok || !txRes.ok || !analysisRes.ok) {
